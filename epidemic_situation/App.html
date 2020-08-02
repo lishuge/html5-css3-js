@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <link rel="stylesheet" href="epidemic-data.css">
+    <link rel="stylesheet" href="world-ep-situation.css">
+    <link rel="stylesheet" href="regional-ep-situation.css">
+    <link rel="stylesheet" href="latest-information.css">
+</head>
+
+<body>
+    <div class="background-image">
+        <!-- 已完成 /疫情数据 -->
+        <div class="epidemic-data">
+            <ul>
+                <li class="cumulative-number ">
+                    <span>2688895</span>
+                    <span>2688895</span>
+                    <span>2688895</span>
+                    <span>2688895</span>
+                </li>
+                <li class="add-number ">
+                    <span class="cumu-num">+125465</span>
+                    <span class="diag-num">+156489</span>
+                    <span class="cumu-death">+456465</span>
+                    <span class="cumu-cure">+65646</span>
+                </li>
+            </ul>
+            <div class="country-search">
+                <input class="input" type="text" placeholder="国家">
+                <div class="button"> <img src="images/searchFilter.png" alt=""></div>
+            </div>
+            <div class="world_map">
+                <canvas width="1106" height="500" id="world_map_data" class="world_map_data"></canvas>
+            </div>
+        </div>
+        <!-- 已完成 /世界疫情发展趋势 -->
+        <div class="world-ep-situation">
+            <div class="parent_cas">
+                <canvas width="590" height="395" class="canvas" id="graphic_canvas_data"></canvas>
+            </div>
+            <div class="parent_cas">
+                <canvas width="590" height="395" class="canvas" id="graphic_canvas_ratio"></canvas>
+            </div>
+        </div>
+        <!-- 已完成 /地区疫情情况 -->
+        <div class="regional-ep-situation">
+            <div class="tab_title">
+                <span>地区</span>
+                <span>新增病例</span>
+                <span>累计病例</span>
+                <span>累计死亡</span>
+                <span>累计治愈</span>
+            </div>
+            <div class="tab_con">
+                <div id="status_scrollDiv_keleyi_com">↑</div>
+                <div class="scrollDiv" id="scrollDiv_keleyi_com">
+                    <ul>
+                        <li>
+                            <span>马达加斯加</span>
+                            <span class="add_data">+428</span>
+                            <span>9295</span>
+                            <span>85</span>
+                            <span>5579</span>
+                        </li>
+                        <li>
+                            <span>阿塞拜疆</span>
+                            <span class="add_data">+417</span>
+                            <span>30005</span>
+                            <span>417</span>
+                            <span>22679</span>
+                        </li>
+                        <li>
+                            <span>塞尔瓦多</span>
+                            <span class="add_data">+407</span>
+                            <span>14015</span>
+                            <span>400</span>
+                            <span>7556</span>
+                        </li>
+                        <li>
+                            <span>塞尔瓦多</span>
+                            <span class="add_data">+407</span>
+                            <span>14015</span>
+                            <span>400</span>
+                            <span>7556</span>
+                        </li>
+                        <li>
+                            <span>德国</span>
+                            <span class="add_data">+527</span>
+                            <span>9515</span>
+                            <span>400</span>
+                            <span>12541</span>
+                        </li>
+                        <li>
+                            <span>巴林</span>
+                            <span class="add_data">+787</span>
+                            <span>915</span>
+                            <span>623</span>
+                            <span>12041</span>
+                        </li>
+                        <li>
+                            <span>阿联酋</span>
+                            <span class="add_data">+487</span>
+                            <span>255</span>
+                            <span>902</span>
+                            <span>15841</span>
+                        </li>
+                        <li>
+                            <span>亚美尼亚</span>
+                            <span class="add_data">+258</span>
+                            <span>25844</span>
+                            <span>269</span>
+                            <span>36241</span>
+                        </li>
+                        <li>
+                            <span>加拿大</span>
+                            <span class="add_data">+858</span>
+                            <span>36444</span>
+                            <span>2125</span>
+                            <span>54241</span>
+                        </li>
+                        <li>
+                            <span>比利时</span>
+                            <span class="add_data">+258</span>
+                            <span>36444</span>
+                            <span>965</span>
+                            <span>25894</span>
+                        </li>
+                        <li>
+                            <span>卡塔尔</span>
+                            <span class="add_data">+269</span>
+                            <span>10024</span>
+                            <span>582</span>
+                            <span>15874</span>
+                        </li>
+                        <li>
+                            <span>英国</span>
+                            <span class="add_data">+569</span>
+                            <span>35024</span>
+                            <span>2114</span>
+                            <span>1424</span>
+                        </li>
+                        <li>
+                            <span>埃塞俄比亚</span>
+                            <span class="add_data">+867</span>
+                            <span>11584</span>
+                            <span>223</span>
+                            <span>6258</span>
+                        </li>
+                        <li>
+                            <span>吉尔吉斯斯坦</span>
+                            <span class="add_data">+458</span>
+                            <span>25421</span>
+                            <span>1224</span>
+                            <span>25410</span>
+                        </li>
+                        <li>
+                            <span>厄瓜多尔</span>
+                            <span class="add_data">+321</span>
+                            <span>15264</span>
+                            <span>3215</span>
+                            <span>12546</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- 已完成 /最新相关资讯-->
+        <div class="latest-information">
+            <div class="news-search">
+                <input type="text" class="news-input">
+                <span class="btn btn-large"></span>
+            </div>
+            <div class="hot_tags">
+                <p class="hot_search"> 热门搜索:</p>
+                <p class="search_con">诈骗</p>
+                <p class="search_con">转机</p>
+                <p class="search_con">健康包</p>
+                <p class="search_con">航班</p>
+                <p class="search_con">登记</p>
+                <p class="search_con">防疫健康码</p>
+                <p class="search_con">留学</p>
+            </div>
+            <div class="news_tabs">
+                <p class="official">官方要闻</p>
+                <p class="keys_hover">海外信息</p>
+                <p class="keys_hover">使馆信息</p>
+            </div>
+            <div class="news_views">
+                <div class="news_list">
+                    <p class="news_title">驻莫桑比克使馆提醒防范以采购防疫物资为名的诈骗</p>
+                    <p class="news_source">中国侨网&nbsp;&nbsp;2020-07-26</p>
+                    <p class="news_content">中国侨网7月26日电
+                        据中国驻莫桑比克大使馆微信公众号消息，近日，多家中资企业向驻莫桑比克大使馆提出核实莫桑比克卫生部采购口罩订单真实性的请求。“采购方”假冒莫卫生部名义向企业订购口罩，并称根据莫法律规定企业须在当地注册公司后才能参与招标，要求企业向其汇款办理注册。经核，莫卫生部未发布过类似采购订单，上述情况属以骗取“企业注册费”为目的的电信网络诈骗。
+                        驻莫桑比克大使馆提醒，近期莫从中国采购医疗物资需求大幅增加，各企业应注意核实采购订单的真实性，通过官方渠道与采购方建立联系，切勿轻信无法查明来源的电话和电子邮件，避免造成不必要的财产损失。
+                    </p>
+                </div>
+                <div class="news_list">
+                    <p class="news_title">驻芝加哥总领馆：乘坐海航HU754临时航班回国人员需进行核酸检测</p>
+                    <p class="news_source">中国新闻网&nbsp;&nbsp;2020-07-26</p>
+                    <p class="news_content">中新网7月26日电
+                        据中国驻芝加哥总领馆网站消息，根据国内通知，中国驻芝加哥总领馆将安排领区符合条件的留学人员搭乘海航HU754芝加哥至深圳临时航班回国，航班计划于美国中部时间7月28日下午19点从芝加哥奥黑尔国际机场起飞，如有变化将及时通知。
+                        海航将于美国中部时间7月24日上午8:30开始，根据总领馆提供的名单顺序，通过海航客服中心电话通知的方式(来电显示一般会包含+86898-95339这个号码)通知符合条件乘客购买机票，请领区留学人员注意接听登记时预留的电话。两轮呼叫未接听或未在规定时间内完成购票，即视为放弃本轮乘机，不予后补。
+                        根据国内有关部门要求，乘坐临时航班回国人员需在航班起飞前120小时内进行新冠病毒核酸检测，乘机人必须持有关检测机构出具的核酸检测阴性证明(纸质，一式两份，一份交航空公司、一份自存)方可办理值机手续登机。现有其他防疫要求(防疫健康码国际版、体温检测)依然有效。
+                    </p>
+                </div>
+                <div class="news_list">
+                    <p class="news_title">关于中国公民乘坐商业航班回国或来毛塔的领事提醒</p>
+                    <p class="news_source">驻毛里塔尼亚伊斯兰共和国大使馆&nbsp;&nbsp;2020-07-25</p>
+                    <p class="news_content">日前，法航、土航等航空公司往来中国和毛里塔尼亚的商业航班逐步复航。现就我侨胞乘坐相关商业航班的注意事项提醒如下：
+                        一、7月20日，中国民航局、海关总署、外交部联合发布《关于来华航班乘客凭新冠病毒核酸检测阴性证明登机的公告》。要求搭乘航班回国的中国籍乘客必须在登机前5天内完成核酸检测，检测应在中国驻外使领馆指定或认可的机构进行，同时还需通过防疫健康码国际版小程序拍照上传核酸检测阴性证明。
+                        二、毛里塔尼亚尚不完全具备相关检测能力，向出境旅客提供国内要求的核酸检测证明。我馆正在与毛塔相关部门沟通，对其核酸检测机构进行评估，并将在条件具备时发布具体实施时间和安排。
+                        三、有意向购票回国的中国旅客需严格提前填写“防疫健康码国际版”。
+                        四、目前，毛里塔尼亚有关方面尚未开放外籍人士（包括中国公民）入境。7月24日，两名由国内来毛塔的中国公民在伊斯坦布尔转机时被拒绝登机，滞留在机场。我馆正在协调相关事宜。
+                        五、当前，全球新冠肺炎疫情形势依然严峻复杂。机舱内空间密闭，长途旅行极易造成交叉感染，建议如非确有必要，暂时尽量不要出行。根据国内政策，入境后须进行14天隔离观察和两次核酸检测，相关费用由当事人自行承担。
+                        我馆再次提醒在毛中国侨胞和从国内来毛塔人员，请密切关注我馆和中转地使领馆相关通知，提前了解出入境、过境政策随疫情形势变化而出现的动态调整，妥善安排行程，切勿盲目购票、检测，以免造成不必要损失。
+                        中国驻毛里塔尼亚使馆 二〇二〇年七月二十四日</p>
+                </div>
+                <div class="news_list">
+                    <p class="news_title">驻孟加拉国使馆提醒回国公民须凭核酸检测证明登机</p>
+                    <p class="news_source">中国新闻网&nbsp;&nbsp;2020-07-25</p>
+                    <p class="news_content">中新网7月25日电
+                        据中国驻孟加拉国大使馆网站消息，日前，孟加拉国政府紧急通告称，从7月26日起，所有在孟外国公民(外交机构、驻孟国际机构人员及家属、在孟停留期少于14天的旅客除外)乘航班离境时，必须持有孟政府指定的16家医院出具的72小时内新冠病毒核酸检测阴性证明。
+                        驻孟使馆提醒在孟中国公民，根据自身国际旅行计划，及时到孟政府指定核酸检测医院进行核酸检测，并凭核酸检测阴性证明登机。
+                        外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。 中国驻孟加拉国使馆领事保护与协助电话：0088-01713090563。 </p>
+                </div>
+                <div class="news_list">
+                    <p class="news_title">中使馆公布加纳新冠病毒核酸检测机构名单</p>
+                    <p class="news_source">中国新闻网&nbsp;&nbsp;2020-07-25</p>
+                    <p class="news_content">中新网7月25日电
+                        据中国驻加纳大使馆网站消息，根据《民航局、海关总署、外交部关于来华航班乘客凭新冠病毒核酸检测阴性证明登机的公告》，搭乘航班赴华的中、外籍乘客须在登机前5天内在中国驻外使领馆指定或认可的机构完成核酸检测并取得核酸检测阴性证明。
+                        使馆将在加纳开放边境并具备实施条件后，提前至少一周发布开始实施上述措施的具体时间和办法，请拟赴华人员关注使馆网站或微信公众号后续通知。
+                        经与加纳相关医疗机构联系确认，使馆现暂时公布核酸检测机构名单(以后视实施情况动态调整)如下：
+                        以上信息仅供参考，使馆不参与检测机构的定价和收费等环节。待使馆发布具体实施办法通知后，请根据相关要求做好检测。使馆对检测机构资质水平、检测人员专业能力及检测结果准确性不承担责任。
+                    </p>
+                </div>
+                <div class="news_list">
+                    <p class="news_title">在冈侨胞出现首例新冠肺炎确诊病例，使馆提醒加强个人防护</p>
+                    <p class="news_source">驻冈比亚共和国大使馆&nbsp;&nbsp;2020-07-25</p>
+                    <p class="news_content">
+                        7月22日，在中国驻冈医疗队积极协助下，在冈侨胞李某及时得到冈卫生部核酸检测。7月24日，据医疗队及李某本人消息，李某核酸检测结果为阳性，将于政府指定治疗中心进行下一步救治。
+                        目前冈比亚疫情发展态势有所上升，已有社区传播迹象，外出感染风险明显提高。请在冈侨胞减少不必要的外出，避免人群聚集。必须外出时要加强个人防护，严格遵守冈政府关于公共场合佩戴口罩的规定。
+                        侨胞企业请谨慎复工复产。平时经商及作业时，佩戴口罩手套，注意场所通风消毒，保持人群间安全距离，并严密关注个体健康状况，一旦有疑似症状立刻按我馆前期发布流程（《提醒疑似染疫侨胞及时拨打冈疫情热线1025》）处置，及时告知使馆。
+                        使馆同时提醒，请广大侨胞保持镇定，以科学理性态度应对冈疫情发展，加强团结互助。使馆将继续加强领事协助工作，同侨胞携手抗疫，共渡难关。 </p>
+                </div>
+
+                <div class="last_more">加载更多</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            KeleyiScroll("#scrollDiv_keleyi_com", "#status_scrollDiv_keleyi_com ");
+        });
+        function AutoScroll(obj, statusobj) {
+            if ($(statusobj).text() == '↑') {
+                $(obj).find("ul:first").animate({
+                    marginTop: "-43px"
+                },
+                    800,
+                    function () {
+                        $(this).css({
+                            marginTop: "0px"
+                        }).find("li:first").appendTo(this);
+                    });
+            }
+        }
+        function KeleyiScroll(obj, statusobj) {
+            setInterval('AutoScroll("' + obj + '","' + statusobj + '")', 3000);
+            $(obj).hover(function () {
+                $(statusobj).text('=')
+            },
+                function () {
+                    $(statusobj).text('↑')
+                })
+        }
+    </script>
+    <script type="text/javascript" src="world_ep_situation.js"></script>
+    <script type="text/javascript" src="epidemic-data.js"></script>
+
+</body>
+
+</html>

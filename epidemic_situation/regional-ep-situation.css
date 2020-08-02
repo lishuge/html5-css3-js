@@ -1,0 +1,53 @@
+/*  地区疫情情况*/
+.regional-ep-situation{
+    overflow: hidden;
+    width: 1188px;
+    height: 466px;
+    position: absolute;
+    top: 1330px;
+    left: 67px;
+}
+.regional-ep-situation .tab_title{
+    padding: 0px 20px 3px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.regional-ep-situation .tab_title span{
+    display: block;    
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(48, 49, 51);
+    width: 200px;
+    line-height: 47px;
+}
+/* 地区疫情数据表格 */
+.regional-ep-situation .tab_con #scrollDiv_keleyi_com{
+  overflow: hidden;
+  width: 100%;
+  height:380px;
+}
+.regional-ep-situation .tab_con ul{
+    color: #303133;
+    font-size: 12px;
+}
+.regional-ep-situation .tab_con ul li{
+    width: 100%;
+    display: inline-block;
+    background-color:rgb(242, 242, 242) ;
+    border-bottom:5px solid rgb(255,255,255);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.regional-ep-situation .tab_con ul li span{
+    line-height:38px ;
+    width: 200px;
+    padding: 0 20px;
+}
+.regional-ep-situation .tab_con ul li .add_data{
+    color: #CF2B1E;
+}
+.regional-ep-situation #status_scrollDiv_keleyi_com{
+    margin-top: -15px;
+    color: rgb(242, 242, 242,0) ;
+}

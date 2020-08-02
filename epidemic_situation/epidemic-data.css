@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+html body {
+    background-color: #50A1C8;
+}
+
+.background-image {
+    margin: auto;
+    width: 1322px;
+    height: 2838px;
+    position: relative;
+    background: white url('./images/background.png');
+}
+
+/* 统计人数--------------------------- */
+.epidemic-data {
+    width: 1200px;
+    height: 84px;
+    position: absolute;
+    top: 159px;
+    left: 185px;
+}
+
+.epidemic-data ul {
+    display: block;
+    float: left;
+}
+
+.epidemic-data ul li {
+    list-style: none;
+    display: block;
+    float: left;
+    border: yellow;
+}
+
+.epidemic-data .cumulative-number {
+    font-size: 20px;
+    color: white;
+}
+
+.epidemic-data li span {
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    width: 140px;
+    height: 30px;
+}
+
+.epidemic-data li span:not(:first-child) {
+    margin-left: 160px;
+}
+
+.epidemic-data .add-number {
+    font-size: 12px;
+}
+
+.add-number .cumu-num {
+    color: #A31E1D
+}
+
+.add-number .diag-num {
+    color: #E44A3D;
+}
+
+.add-number .cumu-death {
+    color: #333333;
+}
+
+.add-number .cumu-cure {
+    color: #53AD77;
+}
+
+/* 搜索--------------------------------------- */
+
+.country-search{
+    margin-top: 27px;
+    margin-left: -44px;
+    display: inline-block;
+}
+.country-search .input {
+    border: 1px solid #dbdbdb;
+    padding-left: 10px;
+    margin-left: -50px;
+    width: 535px;
+    height: 30px;
+}
+
+.country-search .input:focus {
+    outline: none;
+}
+
+.country-search .button {
+    margin-left: 548px;
+    margin-top: -35px;
+    width: 110px;
+    height: 35px;
+    background: #ECAD18;
+}
+
+.country-search .button img {
+    margin-left: 45px;
+    margin-top:6px;
+    width: 20px;
+    height: 20px;
+}
+/* 世界地图-------------------------- */
+.epidemic-data .world_map{
+    width: 1106px;
+    height: 500px;
+    position: absolute;
+    top: 142px;
+    left:-93px; 
+}
+.epidemic-data .world_map .world_map_data{
+    padding: 0;
+    margin: 0;
+}
